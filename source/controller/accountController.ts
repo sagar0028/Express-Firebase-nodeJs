@@ -23,33 +23,6 @@ class AccountController {
         this.router.get("/accounts",authMiddleware, this.listAccounts);
     }
 
-
-    //     try {
-    //         const {
-    //             first_name,
-    //             last_name,
-    //             email,
-    //             phone,
-    //             password,
-    //             birthday
-    //         } = req.body;
-    //         const hashedPassword = await bcrypt.hash(password, 10);
-    //         const account = await Account.create({
-    //             first_name,
-    //             last_name,
-    //             email,
-    //             phone,
-    //             password: hashedPassword,
-    //             birthday,
-    //             created_at: new Date(),
-    //             last_modified: new Date(),
-    //         });
-    //         // emailService.sendAccountCreationEmail(email);
-    //         res.status(201).json(account);
-    //     } catch (error) {
-    //         res.status(500).json(error);
-    //     }
-    // };
     private createAccount = async (req: Request, res: Response) => {
         try {
             const { first_name, last_name, email, phone, password, birthday } = req.body;
